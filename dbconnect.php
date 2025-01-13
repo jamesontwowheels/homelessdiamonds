@@ -1,11 +1,12 @@
-<?PHP
-
-session_start();
-$db = mysqli_connect('localhost','cl50-admin-sys','homelessadmin','cl50-admin-sys');
-if (!$db) { echo 'uhoh' ;};
-if($db->connect_errno > 0){
-	die('Unable to connect to database ['.$db->connect_error.']');
-	};
-
-
-?>
+<?php
+// PHP Data Objects(PDO) Sample Code:
+try {
+    $conn = new PDO("sqlsrv:server = tcp:aarc-server.database.windows.net,1433; Database = homeless_diamonds", "aarc_admin", "aZ158Ja^tR9g6PA6LBj");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $debug_log[] = "db-connected ";
+}
+catch (PDOException $e) {
+    $debug_log[] = 'broken';
+    //print("Error connecting to SQL Server.");
+    die($debug_log[] = $e);
+}
