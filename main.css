@@ -1,0 +1,334 @@
+html, body{
+    width:100%;
+    background: lightgrey;
+    margin:0px;
+    height: 100%;
+}
+#header{
+    z-index: 1;
+}
+
+<!-- done in a rush -->
+#blocker {
+    height: 300px;
+    width:100%;
+    display: block
+}
+
+#frontimage {
+ max-width: 90%;   
+}
+
+#frontdescribe {
+    padding: 5px 30px;
+    font-size: 1.4em;
+    line-height: 120%;
+}
+
+<!-- end of done in a rush -->
+
+#flipbook #author_cover{
+    
+ width:100%;
+height:100%;
+background: white;
+    padding:100px;}
+
+#bookshelf {
+ width: 40%;   
+ float: left;
+}
+
+#container {
+ width:100%;
+    height:100%;
+}
+
+#frontmain {
+ width:60%;   
+float: left;
+    height: 100%;
+    background: white;
+    position: fixed;
+    overflow-y: scroll;
+    z-index: 1;
+    
+}
+
+.hidden {
+ display:none;
+}
+
+.shown {
+ display:block;
+    height: 100%;
+    width:80%;
+    z-index: 3;
+    margin: 0 auto;
+}
+
+.showbehindmag {
+    height:100%;
+    width:100%;
+    height:100%;
+    background-color: rgba(255,255,255,0.75);
+    z-index: 2;
+}
+
+#closemag {
+    right: 0;
+    z-index: 1;
+    max-height: 40px;
+    max-width: 40px;
+    position: fixed;
+    
+}
+#closemagimg {
+    max-height: 40px;
+    float:right;
+    display:inline-block;
+}
+
+#behindmagclose {
+ height: 100%;
+    width:100%;
+    position:fixed;
+    z-index:2
+}
+
+
+#magazine{
+ width: 100%;
+    margin: 0 auto;
+    background: white;
+    opacity: 1;
+    z-index: 4;
+}
+
+.innerimage{
+ max-width: 100%;   
+}
+
+.shelf {
+    border-bottom:3px grey solid;
+background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    margin-left: 15px;
+    padding: 10px;
+    overflow-y: scroll;
+    height:100%;
+    background: lightblue;
+}
+
+#bookshelf {
+ width: 40%;   
+ float: left;
+    position: fixed;
+    margin-right: 0;
+    height:100%;
+    right:5px;
+    z-index: 1;
+}
+
+#latestMag {
+    width: 100%;
+}
+
+.latestMagImage {
+ width:55%;
+    margin: 0 auto;
+    display:block
+}
+
+.maglinkimage{
+    margin:5px;
+    height: 173px;
+    width: 104px;
+}
+
+.maglinkimage:hover{
+    margin: 0px;
+    height: 183px;
+    width: 114px;
+}
+
+.shelf::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.shelf::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+.shelf::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+.contributors {
+    font-size: 0.75em;
+    overflow-y: scroll;
+    padding:15px;
+    max-height: 100%;
+}
+
+.contributors ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+.contributors ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.pageimage{
+    width:100%;
+    height:auto;
+    max-height: 100%;
+  }
+
+.icon{
+    cursor: pointer; cursor: hand;
+}
+
+#navBar{left: 0;
+    top: 20%;
+    height: 378px;
+    width:63px;
+    background-color: antiquewhite;
+    z-index: 2;
+    position: fixed;
+}
+
+#next{
+    background-position: -693px -434px;
+}
+
+
+#previous{
+    background-position: -770px -434px;
+}
+#zoomIn{
+    background-position: -231px -434px;
+}
+#zoomOut{
+    background-position: -308px -434px;
+}
+#contents{
+    background-position: -77px -495px;
+}
+
+#home{
+    background-position: 0px -248px;
+}
+
+#flipbookContainer{
+    min-width: 300px;
+    width:800px;
+    display: block;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+#flipbook{
+    width:800px;
+    height:549px;
+    overflow: hidden;
+    font-size: 0.6em;
+    line-height: 1em; 
+}
+
+#flipbook .page{
+    
+    background-color:white;
+    font-size:20px;
+    text-align:center;
+}
+
+#flipbook .page-wrapper{
+    -webkit-perspective:2000px;
+    -moz-perspective:2000px;
+    -ms-perspective:2000px;
+    -o-perspective:2000px;
+    perspective:2000px;
+}
+
+#flipbook .hard{
+    background:#ccc !important;
+    color:#333;
+    -webkit-box-shadow:inset 0 0 5px #666;
+    -moz-box-shadow:inset 0 0 5px #666;
+    -o-box-shadow:inset 0 0 5px #666;
+    -ms-box-shadow:inset 0 0 5px #666;
+    box-shadow:inset 0 0 5px #666;
+    font-weight:bold;
+}
+
+#flipbook .odd{
+    background:-webkit-gradient(linear, right top, left top, color-stop(0.95, #FFF), color-stop(1, #DADADA));
+    background-image:-webkit-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+    background-image:-moz-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+    background-image:-ms-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+    background-image:-o-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+    background-image:linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+    -webkit-box-shadow:inset 0 0 5px #666;
+    -moz-box-shadow:inset 0 0 5px #666;
+    -o-box-shadow:inset 0 0 5px #666;
+    -ms-box-shadow:inset 0 0 5px #666;
+    box-shadow:inset 0 0 5px #666;
+    
+}
+
+#flipbook .even{
+    background:-webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #dadada));
+    background-image:-webkit-linear-gradient(left, #fff 95%, #dadada 100%);
+    background-image:-moz-linear-gradient(left, #fff 95%, #dadada 100%);
+    background-image:-ms-linear-gradient(left, #fff 95%, #dadada 100%);
+    background-image:-o-linear-gradient(left, #fff 95%, #dadada 100%);
+    background-image:linear-gradient(left, #fff 95%, #dadada 100%);
+    -webkit-box-shadow:inset 0 0 5px #666;
+    -moz-box-shadow:inset 0 0 5px #666;
+    -o-box-shadow:inset 0 0 5px #666;
+    -ms-box-shadow:inset 0 0 5px #666;
+    box-shadow:inset 0 0 5px #666;
+}
+
+#flipbook .shadow,
+#flipbook.shadow{
+  -webkit-box-shadow: 0 4px 10px #666;
+  -moz-box-shadow: 0 4px 10px #666;
+  -ms-box-shadow: 0 4px 10px #666;
+  -o-box-shadow: 0 4px 10px #666;
+  box-shadow: 0 4px 10px #666;
+}
+
+.contributorName {
+ width:15%;   
+ font-size: 0.8em;
+    text-align: left;
+}
+.contributorPages{
+width:35%;
+font-size:0.8em;
+text-decoration: underline;
+    color: blue;
+    
+}
+.pageSelect:hover {
+color: red;
+    cursor: pointer;
+}
+
+.pageSelectStyle {
+    float:left;
+    margin-right: 5px;
+}
