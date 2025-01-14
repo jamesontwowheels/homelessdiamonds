@@ -36,6 +36,18 @@ $result2 = $db->query($query);
 while ($row2 = $result2->fetch_assoc()){
     $thismagpages = $row2['magpages'] + 1;
 };
+
+    $query = "SELECT magpages FROM mag_pages WHERE mag = :thismagnumber";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':thismagnumber', $thismagnumber, PDO::PARAM_INT);
+    $stmt->execute();
+    
+    while ($row2 = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $thismagpages = $row2['magpages'] + 1;
+    }
+
+    echo "this mag pages: ".$thismagpages;
+
     $author_count = 0;
 while ($counter = $result3->fetch_assoc()) {   
     $author_count += 1;
