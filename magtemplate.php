@@ -26,16 +26,16 @@
     <?PHP
 
 echo '<table>';
-        $query = 'select magpages from mag_pages where mag = '.$thismagnumber;
-        $query2 = 'select * from contributors_all where edition = '.$thismagnumber.' and 26_1 > 0';
-        $query3 = 'select * from contributors_all where edition = '.$thismagnumber.' and 26_1 > 0';
+   //     $query = 'select magpages from mag_pages where mag = '.$thismagnumber;
+    //    $query2 = 'select * from contributors_all where edition = '.$thismagnumber.' and 26_1 > 0';
+    //    $query3 = 'select * from contributors_all where edition = '.$thismagnumber.' and 26_1 > 0';
         $count = 0;
-$result = $db->query($query2);
-$result3 = $db->query($query3);
-$result2 = $db->query($query);
-while ($row2 = $result2->fetch_assoc()){
+// $result = $db->query($query2);
+// $result3 = $db->query($query3);
+// $result2 = $db->query($query);
+/* while ($row2 = $result2->fetch_assoc()){
     $thismagpages = $row2['magpages'] + 1;
-};
+}; */
 
     $query = "SELECT magpages FROM mag_pages WHERE mag = :thismagnumber";
     $stmt = $db->prepare($query);
@@ -48,7 +48,7 @@ while ($row2 = $result2->fetch_assoc()){
 
     echo "this mag pages: ".$thismagpages;
 
-    $author_count = 0;
+/*    $author_count = 0;
 while ($counter = $result3->fetch_assoc()) {   
     $author_count += 1;
 }   
@@ -83,7 +83,7 @@ while ($row = $result->fetch_assoc()) {
     }
 
 }
-echo '</table></div></div>';
+echo '</table></div></div>'; */
     foreach(range(2,$thismagpages-2) as $x){
         $thispage = 'hd'.$_SESSION["thismagnumber"].'/HD%20'.$_SESSION["thismagnumber"].'%20p%20'.$x.'.jpg';
      echo '<div ';
