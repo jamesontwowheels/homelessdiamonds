@@ -3,7 +3,7 @@
 include ('dbconnect.php');
 
 $query  = "SELECT Contributor FROM contributors_all ORDER by UID";
-$results = $db->query($query);
+$results = $conn->query($query);
 
 $rows = array("foo", "bar", "hello", "world");
 $x = 0;
