@@ -34,8 +34,8 @@ echo '<table>';
         $count = 0;
         echo $query2;
         echo $query3;
- $result = $db->query($query2);
- $result3 = $db->query($query3);
+ $result = $conn->query($query2);
+ $result3 = $conn->query($query3);
 // $result2 = $db->query($query);
 /* while ($row2 = $result2->fetch_assoc()){
     $thismagpages = $row2['magpages'] + 1;
