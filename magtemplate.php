@@ -23,8 +23,10 @@
     
     <h3>Contributors</h3>
     
-    <?PHP
 
+
+    <?PHP
+echo $debug_log["db"];
 echo '<table>';
    //     $query = 'select magpages from mag_pages where mag = '.$thismagnumber;
         $query2 = 'select * from contributors_all where edition = '.$thismagnumber.' and 26_1 > 0';
@@ -44,6 +46,7 @@ echo '<table>';
     
     while ($row2 = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $thismagpages = $row2['magpages'] + 1;
+        echo $thismagpages;
     }
 
     $author_count = 0;
