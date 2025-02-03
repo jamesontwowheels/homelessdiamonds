@@ -29,8 +29,8 @@
 echo $debug_log["db"];
 echo '<table>';
    //     $query = 'select magpages from mag_pages where mag = '.$thismagnumber;
-        $query2 = 'select * from contributors_all where edition = '.$thismagnumber.' and 26_1 > 0';
-        $query3 = 'select * from contributors_all where edition = '.$thismagnumber.' and 26_1 > 0';
+        $query2 = 'select * from contributors_all where edition = '.$thismagnumber.' and _26_1 > 0';
+        $query3 = 'select * from contributors_all where edition = '.$thismagnumber.' and _26_1 > 0';
         $count = 0;
         echo $query2;
         echo $query3;
