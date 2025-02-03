@@ -32,6 +32,8 @@ echo '<table>';
         $query2 = 'select * from contributors_all where edition = '.$thismagnumber.' and 26_1 > 0';
         $query3 = 'select * from contributors_all where edition = '.$thismagnumber.' and 26_1 > 0';
         $count = 0;
+        echo $query2;
+        echo $query3;
  $result = $db->query($query2);
  $result3 = $db->query($query3);
 // $result2 = $db->query($query);
@@ -43,7 +45,7 @@ echo '<table>';
     $stmt = $conn->prepare($query);
     $stmt->bindParam(':thismagnumber', $thismagnumber, PDO::PARAM_INT);
     $stmt->execute();
-    
+    echo $query;
     while ($row2 = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $thismagpages = $row2['magpages'] + 1;
         echo $thismagpages;
