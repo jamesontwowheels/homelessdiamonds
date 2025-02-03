@@ -44,6 +44,7 @@ echo '<table>';
     $query = "SELECT magpages FROM mag_pages WHERE mag = :thismagnumber";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(':thismagnumber', $thismagnumber, PDO::PARAM_INT);
+    echo $query;
     $stmt->execute();
     echo $query;
     while ($row2 = $stmt->fetch(PDO::FETCH_ASSOC)) {
