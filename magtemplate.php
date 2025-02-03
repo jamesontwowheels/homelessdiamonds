@@ -41,16 +41,41 @@ echo '<table>';
     $thismagpages = $row2['magpages'] + 1;
 }; */
 
-    $query = "SELECT magpages FROM mag_pages WHERE mag = :thismagnumber";
+/*    $query = "SELECT magpages FROM mag_pages WHERE mag = :thismagnumber";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(':thismagnumber', $thismagnumber, PDO::PARAM_INT);
     echo $query;
+    echo $thismagnumber;
     $stmt->execute();
     echo $query;
     while ($row2 = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $thismagpages = $row2['magpages'] + 1;
         echo $thismagpages;
-    }
+    }*/
+
+    $query = "SELECT magpages FROM mag_pages WHERE mag = :thismagnumber";
+$stmt = $conn->prepare($query);
+
+if (!isset($thismagnumber) || !is_numeric($thismagnumber)) {
+    die("Error: `\$thismagnumber` is missing or invalid.");
+}
+
+$stmt->bindValue(':thismagnumber', (int)$thismagnumber, PDO::PARAM_INT);
+
+echo "Executing: SELECT magpages FROM mag_pages WHERE mag = " . $thismagnumber . "<br>";
+
+if (!$stmt->execute()) {
+    die(print_r($stmt->errorInfo(), true));
+}
+
+$row2 = $stmt->fetch(PDO::FETCH_ASSOC);
+if (!$row2) {
+    die("No records found.");
+}
+
+$thismagpages = $row2['magpages'] + 1;
+echo "Pages: " . $thismagpages;
+
 
     $author_count = 0;
 while ($counter = $result3->fetch_assoc()) {   
