@@ -16,8 +16,7 @@
     
     $cover1 = 'hd'.$_SESSION["thismagnumber"].'/HD%20'.$_SESSION["thismagnumber"].'%20Cover%201.jpg';
     $cover2 = 'hd'.$_SESSION["thismagnumber"].'/HD%20'.$_SESSION["thismagnumber"].'%20Cover%202.jpg';
-    echo '<div class="hard"><img class="pageimage fixed" src="'.$cover1.'"/></div>';
-    echo  '<div class="contents"><div class="contributors">';
+
     
     ?>
     
@@ -26,7 +25,6 @@
 
 
     <?PHP
-echo $debug_log["db"];
 echo '<table>';
    //     $query = 'select magpages from mag_pages where mag = '.$thismagnumber;
         $query2 = "SELECT * from contributors_all where edition = :thismagnumber";
@@ -34,22 +32,7 @@ echo '<table>';
         $count = 0;
  $result = $conn->prepare($query2);
  $result3 = $conn->prepare($query3);
-// $result2 = $db->query($query);
-/* while ($row2 = $result2->fetch_assoc()){
-    $thismagpages = $row2['magpages'] + 1;
-}; */
 
-/*    $query = "SELECT magpages FROM mag_pages WHERE mag = :thismagnumber";
-    $stmt = $conn->prepare($query);
-    $stmt->bindParam(':thismagnumber', $thismagnumber, PDO::PARAM_INT);
-    echo $query;
-    echo $thismagnumber;
-    $stmt->execute();
-    echo $query;
-    while ($row2 = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $thismagpages = $row2['magpages'] + 1;
-        echo $thismagpages;
-    }*/
 
     $query = "SELECT magpages FROM mag_pages WHERE mag = :thismagnumber";
 $stmt = $conn->prepare($query);
@@ -60,8 +43,6 @@ if (!isset($thismagnumber) || !is_numeric($thismagnumber)) {
 $result->bindValue(':thismagnumber', (int)$thismagnumber, PDO::PARAM_INT);
 $result3->bindValue(':thismagnumber', (int)$thismagnumber, PDO::PARAM_INT);
 $stmt->bindValue(':thismagnumber', (int)$thismagnumber, PDO::PARAM_INT);
-
-echo "Executing: SELECT magpages FROM mag_pages WHERE mag = " . $thismagnumber . "<br>";
 
 if (!$stmt->execute()) {
     die(print_r($stmt->errorInfo(), true));
@@ -79,15 +60,12 @@ if (!$row2) {
 }
 
 $thismagpages = $row2['magpages'] + 1;
-echo "Pages: " . $thismagpages;
 
 
     $author_count = 0;
 while ($counter = $result3->fetch(PDO::FETCH_ASSOC)) { 
-    echo " x ";  
     $author_count += 1;
 }   
-echo "author_count: ".$author_count;
 $author_count = $author_count - ( $author_count % 4) + 4;
     $author_track = 0;
 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
