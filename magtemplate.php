@@ -29,13 +29,13 @@
 echo $debug_log["db"];
 echo '<table>';
    //     $query = 'select magpages from mag_pages where mag = '.$thismagnumber;
-        $query2 = 'select * from contributors_all where edition = '.$thismagnumber.' and _26_1 > 0';
-        $query3 = 'select * from contributors_all where edition = '.$thismagnumber.' and _26_1 > 0';
+        $query2 = 'select * from contributors_all where edition = :thismagnumber and _26_1 > 0';
+        $query3 = 'select * from contributors_all where edition = :thismagnumber and _26_1 > 0';
         $count = 0;
         echo $query2;
         echo $query3;
- $result = $conn->query($query2);
- $result3 = $conn->query($query3);
+ $result = $conn->prepare($query2);
+ $result3 = $conn->prepare($query3);
 // $result2 = $db->query($query);
 /* while ($row2 = $result2->fetch_assoc()){
     $thismagpages = $row2['magpages'] + 1;
@@ -59,7 +59,8 @@ $stmt = $conn->prepare($query);
 if (!isset($thismagnumber) || !is_numeric($thismagnumber)) {
     die("Error: `\$thismagnumber` is missing or invalid.");
 }
-
+$result->bindValue(':thismagnumber', (int)$thismagnumber, PDO::PARAM_INT);
+$result3->bindValue(':thismagnumber', (int)$thismagnumber, PDO::PARAM_INT);
 $stmt->bindValue(':thismagnumber', (int)$thismagnumber, PDO::PARAM_INT);
 
 echo "Executing: SELECT magpages FROM mag_pages WHERE mag = " . $thismagnumber . "<br>";
@@ -78,7 +79,8 @@ echo "Pages: " . $thismagpages;
 
 
     $author_count = 0;
-while ($counter = $result3->fetch_(PDO::FETCH_ASSOC)) {   
+while ($counter = $result3->fetch_(PDO::FETCH_ASSOC)) { 
+    echo 1 + " x ";  
     $author_count += 1;
 }   
 $author_count = $author_count - ( $author_count % 4) + 4;
