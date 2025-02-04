@@ -68,6 +68,12 @@ echo "Executing: SELECT magpages FROM mag_pages WHERE mag = " . $thismagnumber .
 if (!$stmt->execute()) {
     die(print_r($stmt->errorInfo(), true));
 }
+if (!$result->execute()) {
+    die(print_r($result->errorInfo(), true));
+}
+if (!$result3->execute()) {
+    die(print_r($result3->errorInfo(), true));
+}
 
 $row2 = $stmt->fetch(PDO::FETCH_ASSOC);
 if (!$row2) {
