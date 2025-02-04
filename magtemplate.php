@@ -29,11 +29,9 @@
 echo $debug_log["db"];
 echo '<table>';
    //     $query = 'select magpages from mag_pages where mag = '.$thismagnumber;
-        $query2 = 'select * from contributors_all where edition = :thismagnumber and _26_1 > 0';
-        $query3 = 'select * from contributors_all where edition = :thismagnumber and _26_1 > 0';
+        $query2 = "SELECT * from contributors_all where edition = :thismagnumber";
+        $query3 = "SELECT * from contributors_all where edition = :thismagnumber";
         $count = 0;
-        echo $query2;
-        echo $query3;
  $result = $conn->prepare($query2);
  $result3 = $conn->prepare($query3);
 // $result2 = $db->query($query);
@@ -85,7 +83,7 @@ echo "Pages: " . $thismagpages;
 
 
     $author_count = 0;
-while ($counter = $result3->fetch_(PDO::FETCH_ASSOC)) { 
+while ($counter = $result3->fetch(PDO::FETCH_ASSOC)) { 
     echo " x ";  
     $author_count += 1;
 }   
