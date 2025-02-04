@@ -16,7 +16,8 @@
     
     $cover1 = 'hd'.$_SESSION["thismagnumber"].'/HD%20'.$_SESSION["thismagnumber"].'%20Cover%201.jpg';
     $cover2 = 'hd'.$_SESSION["thismagnumber"].'/HD%20'.$_SESSION["thismagnumber"].'%20Cover%202.jpg';
-
+    echo '<div class="hard"><img class="pageimage fixed" src="'.$cover1.'"/></div>';
+    echo  '<div class="contents"><div class="contributors">';
     
     ?>
     
@@ -32,7 +33,6 @@ echo '<table>';
         $count = 0;
  $result = $conn->prepare($query2);
  $result3 = $conn->prepare($query3);
-
 
     $query = "SELECT magpages FROM mag_pages WHERE mag = :thismagnumber";
 $stmt = $conn->prepare($query);
@@ -60,7 +60,6 @@ if (!$row2) {
 }
 
 $thismagpages = $row2['magpages'] + 1;
-
 
     $author_count = 0;
 while ($counter = $result3->fetch(PDO::FETCH_ASSOC)) { 
