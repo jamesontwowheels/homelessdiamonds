@@ -99,7 +99,7 @@ while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         echo '<td class="contributorName">'.$row['Contributor'].'</td>';
         echo '<td class="contributorPages">';
     foreach (range(1,10) as $number){
-        $pagenumber = '26_'.$number;
+        $pagenumber = '_26_'.$number;
         if($row[$pagenumber] > 0){
          $displaypagenumber = $row[$pagenumber]+2;
          echo '<div class="pageSelect pageSelectStyle" pagenumber="'.$displaypagenumber.'"> '.$row[$pagenumber].' </div>';   
