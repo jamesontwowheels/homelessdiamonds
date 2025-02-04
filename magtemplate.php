@@ -86,9 +86,10 @@ echo "Pages: " . $thismagpages;
 
     $author_count = 0;
 while ($counter = $result3->fetch_(PDO::FETCH_ASSOC)) { 
-    echo 1 + " x ";  
+    echo " x ";  
     $author_count += 1;
 }   
+echo "author_count: " + $author_count;
 $author_count = $author_count - ( $author_count % 4) + 4;
     $author_track = 0;
 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
