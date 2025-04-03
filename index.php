@@ -131,30 +131,38 @@ Since 2006 Homeless Diamonds has offered a platform for talent and an avenue of 
 							<div class="row">
 								<div class="4u 12u$(mobile)">
 									<article class="item">
-										<a href="magnew55.php" identifier='55' class="image fit"><img identifier='55' class='' src="hd55/HD%2055%20Cover%201.jpg" alt="" /></a>
+										<a href="magnew56.php" identifier='56' class="image fit"><img identifier='56' class='' src="hd56/HD%2056%20Cover%201.jpg" alt="" /></a>
                                         <header>
-											<h3>Winter 2024</h3>
+											<h3>Spring 2025</h3>
 										</header>
 									</article>
                                 </div>
                             </div>
                             <br><br>
                                 <!-- second set of covers -->
-                                <div class="row">
-                                    <div class="4u 12u$(mobile)">
+                                    
+							<div class="row">
+								<div class="4u 12u$(mobile)">
 									<article class="item">
-										<a href="magnew53.php" identifier='53' class="image fit"><img identifier='53' class='' src="hd53/HD%2053%20Cover%201.jpg" alt="" /></a>
+										<a href="magnew55.php" identifier='55' class="image fit"><img identifier='55' class='' src="hd55/HD%2055%20Cover%201.jpg" alt="" /></a>
                                         <header>
-											<h3>Spring 2024</h3>
+											<h3>Winter 2024</h3>
 										</header>
 									</article>
                                 </div>
-								<div class="row">
-                                    <div class="4u 12u$(mobile)">
+                                <div class="4u 12u$(mobile)">
 									<article class="item">
 										<a href="magnew54.php" identifier='54' class="image fit"><img identifier='54' class='' src="hd54/HD%2054%20Cover%201.jpg" alt="" /></a>
                                         <header>
 											<h3>Summer 2024</h3>
+										</header>
+									</article>
+                                </div>
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="magnew53.php" identifier='53' class="image fit"><img identifier='53' class='' src="hd53/HD%2053%20Cover%201.jpg" alt="" /></a>
+                                        <header>
+											<h3>Spring 2024</h3>
 										</header>
 									</article>
                                 </div>
