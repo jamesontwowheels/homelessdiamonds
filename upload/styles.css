@@ -1,0 +1,33 @@
+table {
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+td, th {
+    border: 1px solid #ccc;
+    padding: 4px;
+}
+
+input {
+    width: 90px;
+}
+
+.name-input {
+    width: 180px;
+}
+
+.suggestions {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 10;
+}
+
+.suggestion {
+    padding: 4px;
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    background: #eee;
+}
