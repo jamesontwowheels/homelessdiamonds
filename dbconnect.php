@@ -1,7 +1,7 @@
 <?php
 // PHP Data Objects(PDO) Sample Code:
 try {
-    $conn = new PDO("sqlsrv:server = tcp:aarc-server.database.windows.net,1433; Database = homeless_diamonds", "aarc_admin", getenv('DB_PASSWORD'));
+    $conn = new PDO("sqlsrv:server = tcp:aarc-server.database.windows.net,1433; Database = homeless_diamonds", "aarc_admin", "a58Z1Ja^tR9g6PA6LBj");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $debug_log["db"] = "db-connected ";
 }
