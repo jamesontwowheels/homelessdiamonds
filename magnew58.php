@@ -45,7 +45,7 @@ include 'dbconnect.php';
 
 $thismag = 'magazine_2015_1';
 
-$_SESSION["thismagnumber"] = 57;
+$_SESSION["thismagnumber"] = 58;
 
 $thismagnumber = $_SESSION["thismagnumber"];
 

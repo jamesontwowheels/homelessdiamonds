@@ -12,12 +12,12 @@ $names = $_POST['name'];
 $conn->beginTransaction();
 
 /* Get next Unique ID */
-$maxStmt = $conn->query("SELECT ISNULL(MAX(UniqueID), 0) FROM contributors_all");
+$maxStmt = $conn->query("SELECT ISNULL(MAX(UID), 0) FROM contributors_all");
 $nextId = (int)$maxStmt->fetchColumn() + 1;
 
 $sql = "
 INSERT INTO contributors_all
-(UniqueID, Name, MagazineEdition, _26_1, _26_2, _26_3, _26_4, _26_5, _26_6, _26_7, _26_8, _26_9)
+(UID, Contributor, Edition, _26_1, _26_2, _26_3, _26_4, _26_5, _26_6, _26_7, _26_8, _26_9)
 VALUES
 (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 ";

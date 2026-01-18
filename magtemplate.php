@@ -75,7 +75,7 @@ while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         else {$count = 0;}
         echo '<td class="contributorName">'.$row['Contributor'].'</td>';
         echo '<td class="contributorPages">';
-    foreach (range(1,10) as $number){
+    foreach (range(1,9) as $number){
         $pagenumber = '_26_'.$number;
         if($row[$pagenumber] > 0){
          $displaypagenumber = $row[$pagenumber]+2;

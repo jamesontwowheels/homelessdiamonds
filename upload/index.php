@@ -48,7 +48,7 @@
 </form>
 
 <script>
-document.querySelectorAll('.name-input').forEach(input => {
+/** document.querySelectorAll('.name-input').forEach(input => {
     input.addEventListener('input', async () => {
         const query = input.value;
         const box = input.nextElementSibling;
@@ -71,7 +71,7 @@ document.querySelectorAll('.name-input').forEach(input => {
             };
         });
     });
-});
+});**/
 
 document.getElementById('importForm').addEventListener('submit', async e => {
     e.preventDefault();

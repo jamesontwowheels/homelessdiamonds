@@ -12,10 +12,10 @@ if (strlen($q) < 2) {
 
 try {
     $stmt = $conn->prepare("
-        SELECT DISTINCT TOP 10 Name
-        FROM homeless_diamonds.dbo.contributors_all
-        WHERE Name LIKE ?
-        ORDER BY Name
+        SELECT DISTINCT TOP 10 Contributor
+        FROM dbo.contributors_all
+        WHERE Contributor LIKE ?
+        ORDER BY Contributor
     ");
 
     $stmt->execute([$q . '%']);
