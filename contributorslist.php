@@ -2,24 +2,21 @@
 
 include ('dbconnect.php');
 
-$query  = "SELECT Contributor FROM contributors_all ORDER by UID";
+$query  = "SELECT Contributor FROM contributors_all where Edition > 27 ORDER BY UID";
 $results = $conn->query($query);
 
-$rows = array("foo", "bar", "hello", "world");
+$rows = ["foo", "bar", "hello", "world"];
 $x = 0;
-//$rows = ['one','two'];
-//echo 'c';
 
-while ($row2 = $results->fetch_assoc()){
-    if($x<1000){
-        if (in_array($row2[Contributor], $rows)){
-        }
-        else{
-    $rows[] = $row2[Contributor];
-    $x += 1;
+while ($row2 = $results->fetch(PDO::FETCH_ASSOC)) {
+    if ($x < 10000) {
+        if (!in_array($row2['Contributor'], $rows, true)) {
+            $rows[] = $row2['Contributor'];
+            $x++;
         }
     }
-};
+}
+
 
 /*foreach ($results as $key => $row) {
   //  echo 'b';

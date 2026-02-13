@@ -1,4 +1,3 @@
-
 <?PHP session_start(); ?>
 
 <!DOCTYPE html>
@@ -57,8 +56,8 @@ $author_underscore = str_replace(" ", "_", $author_get);
     
 $_SESSION["author"] = $author;
 
-    $query1 = 'select * from contributors_all where Contributor = "'.$author.'"';
-    $result1 = $db->query($query1);
+    $query1 = "select * from contributors_all where Contributor = '".$author."'";
+    $result1 = $conn->query($query1);
     $count = 0;
     foreach($result1 as $key => $row){
         $count += 1;
